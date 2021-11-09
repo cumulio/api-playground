@@ -1,14 +1,24 @@
 <html>
-  <head>   <script type="module" crossorigin src="./assets/index.f435ef2c.js"></script>
-   <link rel="stylesheet" href="./assets/index.d4529b05.css">
+  <head>   <script type="module" crossorigin src="./assets/index.3ae7b028.js"></script>
+   <link rel="modulepreload" href="./assets/vendor.85a39ce9.js">
+   <link rel="stylesheet" href="./assets/index.3a103c90.css">
  </head>
   <body>
-    <div id="content" class="d-flex align-items-stretch w-100">
-      <img src="images/Free Jungle Gym Vector.svg" width="50%" />
-    </div>
-    <a href="https://www.vecteezy.com/free-vector/playground"
-      >Playground Vectors by Vecteezy</a
-    >
+    <sp-theme color="dark" scale="large">
+      <div id="content">
+        <img src="images/Free Jungle Gym Vector.svg" width="50%" />
+        <sp-button-group>
+          <sp-button size="xl" variant="primary" href=" https://colab.research.google.com/github/cumulio/api-playground/blob/main/notebooks/dataset.ipynb" target="_blank">
+            <img src="images/CoLaboratory-01.svg" slot="icon" />
+            Dataset
+          </sp-button>
+        </sp-button-group>
+      </div>
+      <a href="https://www.vecteezy.com/free-vector/playground"
+        >Playground Vectors by Vecteezy</a
+      >
+    </sp-theme>
+
     
   </body>
 </html>
