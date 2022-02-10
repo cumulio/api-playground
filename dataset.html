@@ -1,0 +1,68 @@
+<html>
+  <body>
+    <script src="https://embed.runkit.com"></script>
+
+    <h1>Create a Dataset with the Cumul.io API</h1>
+    <p>
+      This is a simple notebook powered by
+      <a href="https://runkit.com/">RunKit</a> which creates a dataset in
+      Cumul.io via the Core API, using the
+      <a href="https://www.npmjs.com/package/cumulio">Node.js SDK</a>. You will
+      notice some code blocks where you should replace some inputs with your own
+      API key and tokens (so be mindful of who you share this file with and how
+      you save it. It might be best to create a new API key and token to play
+      around with this code and delete it after). You can also change around the
+      code, add new cells, play around and enjoy!
+    </p>
+
+    <h2>Create an API client</h2>
+    <p>
+      Replace the key and token below with your key and token which you can
+      generate in your <a href="https://app.cumul.io">Cumul.io</a> profile.
+    </p>
+
+    <rk-embed>
+      //Install Cumul.io 
+      const Cumulio = require("cumulio"); 
+      const client = new
+      Cumulio({ api_key: "Your API key", api_token: "Your API token", });
+    </rk-embed>
+
+    <h2>Create a dataset</h2>
+    <p>
+      Creating a dashboard in Cumul.io uses the ``create`` function and sets the
+      "securable" type to be a "dataset". For more information on specific API
+      calls to create a dataset in Cumul.io, check out the
+      <a href="https://developer.cumul.io/?javascript#dataset_create"
+        >Developer Docs</a
+      >
+    </p>
+    <rk-embed>
+        client.create("securable", {type: "dataset", name : {en:"Example Dataset via Playground"}});
+    </rk-embed>
+    <script>
+        class RunKitEmbed extends HTMLElement {
+            constructor() {
+                super();
+                const wrapper = document.createElement('div')
+                wrapper.style = "margin: 20pt"
+        
+                const source = this.textContent
+                this.textContent = ""
+                const tempCodePlaceholder = document.createElement('pre')
+                tempCodePlaceholder.textContent = source
+        
+                window.RunKit.createNotebook({
+                    element: wrapper,
+                    source,
+                    onLoad: () => tempCodePlaceholder.remove()
+                })
+                this.appendChild(wrapper)
+                this.appendChild(tempCodePlaceholder)
+            }
+        }
+        customElements.define('rk-embed', RunKitEmbed);
+    </script>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
